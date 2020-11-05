@@ -9,39 +9,7 @@
     grid-template-rows: 2fr 18.5fr;
     grid-template-columns: 1fr 8fr;
     grid-gap: 10px;
-    background-color: #C4C4C4;
+    background-color: #fff;
 }
 
-.header {
-    grid-area: header;
-    background-color: #655050;
-}
-
-.header img {
-    width: 60px;
-}
-
-.nav {
-    grid-area: nav;
-    background-color: #655050;
-    text-align: center;
-}
-
-.nav div {
-    margin: 0 3px 0 3px;
-    border: oldlace solid 2px;
-    margin-top: 10px;
-    border-radius: 6px;
-}
-
-.nav a {
-    padding: 2px;
-    text-decoration: none;
-    color:#fff;
-}
-
-.content {
-    grid-area: content;
-    background-color: #BCACAC;
-}
 
