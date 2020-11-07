@@ -8,7 +8,12 @@
     margin: 0 5px 0 5px;
     margin-top: 15px;
     border-radius: 6px;
-    background-color: #C4C4C4;
+    background-color: #e8e7e7;
+}
+
+.nav div:hover {
+    background-color: #d4cccc;
+    transition: 0.5s ease-in-out;
 }
 
 .nav a {
@@ -19,6 +24,6 @@
     font-weight: 400;
 }
 
-nav a.active {
+.nav a.active {
     color: #7c63ca;
 }

@@ -1,0 +1,35 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    
+}
+
+.dialogs__head {
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.dialogs__items {
+    padding: 10px;
+    text-align: center;
+}
+
+.dialogs__items .active {
+    color: #7c63ca;
+}
+
+.dialog {
+    padding: 5px;
+    font-size: 19px;
+}
+
+.message {
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.message:hover {
+    transition: 0.5s ease-in-out;
+    background-color: #c4c4c4;
+}
