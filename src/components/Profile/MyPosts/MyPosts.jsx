@@ -4,13 +4,17 @@ import "./MyPosts.css";
 
 const MyPosts = () => {
     return (
-        <div>
-            <div>my posts</div>
+        <div className="myPostsBlock">
+            <h3>my posts</h3>
             <div>
-                <textarea></textarea>
-                <button>Add post</button>
+                <div>
+                    <textarea></textarea>
+                </div>
+                <div>
+                    <button>Add post</button>
+                </div>
             </div>
-            <div>
+            <div className="MyPostBlock">
                 <Post message="Hi, how are you?" likeCount="2" />
                 <Post message="It's my first post" likeCount="7" />
             </div>

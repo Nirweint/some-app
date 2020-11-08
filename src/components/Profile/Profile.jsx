@@ -1,17 +1,12 @@
 import React from "react";
 import MyPosts from "./MyPosts/MyPosts";
 import "./Profile.css";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
     return (
         <div>
-            <div>
-                <img
-                    src="https://www.ippanetwork.org/wp-content/uploads/2016/03/MC-2016-Background-e1458413633484.jpg"
-                    alt="img"
-                />
-            </div>
-            <div>ava + descr</div>
+            <ProfileInfo/>
             <MyPosts />
         </div>
     );
