@@ -23,6 +23,10 @@
     font-size: 19px;
 }
 
+.dialog a {
+    text-decoration: none;
+}
+
 .message {
     width: fit-content;
     padding: 10px;
@@ -33,3 +37,4 @@
     transition: 0.5s ease-in-out;
     background-color: #c4c4c4;
 }
+
