@@ -3,11 +3,14 @@ import Post from "./Post/Post";
 import "./MyPosts.css";
 
 const MyPosts = () => {
+    let postData = [
+        { message: "Hi, how are you?", likeCount: "2" },
+        { message: "It's my first post", likeCount: "7" },
+    ];
 
-let postData = [
-    {message: "Hi, how are you?", likeCount: '2'},
-    {message: "It's my first post", likeCount: '7'}
-]
+    let postElements = postData.map((post) => (
+        <Post message={post.message} likeCount={post.likeCount} />
+    ));
 
     return (
         <div className="myPostsBlock">
@@ -20,10 +23,7 @@ let postData = [
                     <button>Add post</button>
                 </div>
             </div>
-            <div className="MyPostBlock">
-                <Post message={postData[0].message} likeCount={postData[0].likeCount} />
-                <Post message={postData[1].message} likeCount={postData[1].likeCount} />
-            </div>
+            <div className="MyPostBlock">{postElements}</div>
         </div>
     );
 };
