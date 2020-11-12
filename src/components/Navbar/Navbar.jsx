@@ -2,23 +2,37 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
+    let friendsIcon = props.friendsData.map((icon) => (
+        <img src={(icon = icon.icon)} alt="icon" />
+    ));
+
+    let friendsNam = props.friendsNam.map((name) => <div>{name.name}</div>);
+
     return (
         <nav className="nav">
-            <div>
+            <div className="nav__link">
                 <NavLink to="/profile">Profile</NavLink>
             </div>
-            <div>
+            <div className="nav__link">
                 <NavLink to="/dialogs">Messages</NavLink>
             </div>
-            <div>
+            <div className="nav__link">
                 <NavLink to="/news">News</NavLink>
             </div>
-            <div>
+            <div className="nav__link">
                 <NavLink to="/music">Music</NavLink>
             </div>
-            <div>
+            <div className="nav__link">
                 <NavLink to="/settings">Settings</NavLink>
+            </div>
+
+            <div className="friends">
+                <div className="friends__header">Friends</div>
+                <div className="friends__icons">
+                    <div className="friends__icon">{friendsIcon}</div>
+                    <div className="friends__name">{friendsNam}</div>
+                </div>
             </div>
         </nav>
     );

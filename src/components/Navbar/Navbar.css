@@ -4,14 +4,14 @@
     text-align: center;
 }
 
-.nav div {
+.nav .nav__link {
     margin: 0 5px 0 5px;
     margin-top: 15px;
     border-radius: 6px;
     background-color: #e8e7e7;
 }
 
-.nav div:hover {
+.nav .nav__link:hover {
     background-color: #d4cccc;
     transition: 0.5s ease-in-out;
 }
@@ -27,3 +27,32 @@
 .nav a.active {
     color: #7c63ca;
 }
+
+.friends {
+    margin-top: 60px;
+}
+
+.friends__header {
+    color:black;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.friends__icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.friends__name {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.friends__icon {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+}
+

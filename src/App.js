@@ -14,20 +14,23 @@ function App(props) {
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header />
-                <Navbar />
+                <Navbar 
+                friendsData={props.state.navFriends.friendsIcons}
+                friendsNam={props.state.navFriends.friendsNames}
+                />
                 <div className="app-wrapper-content">
                     <Route
                         path="/dialogs"
                         render={() => (
                             <Dialogs
-                                dialogsData={props.dialogsData}
-                                messagesData={props.messagesData}
+                                dialogsData={props.state.dialogsState.dialogsData}
+                                messagesData={props.state.dialogsState.messagesData}
                             />
                         )}
                     />
                     <Route
                         path="/profile"
-                        render={() => <Profile postData={props.postData} />}
+                        render={() => <Profile postData={props.state.profileState.postData} />}
                     />
                     <Route path="/news" component={News} />
                     <Route path="/music" component={Music} />
