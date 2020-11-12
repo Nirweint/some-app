@@ -3,17 +3,46 @@ let state = {
         postData: [
             { id: "1", message: "Hi, how are you?", likeCount: "2" },
             { id: "2", message: "It's my first post", likeCount: "7" },
-            { id: "3", message: "Fuck", likeCount: "4" },
         ],
     },
     dialogsState: {
         dialogsData: [
-            { id: 1, name: "Alex" },
-            { id: 2, name: "Sofya" },
-            { id: 3, name: "Pasha" },
-            { id: 4, name: "Oleg" },
-            { id: 5, name: "Olya" },
-            { id: 6, name: "Andrey" },
+            {
+                id: 1,
+                name: "Alex",
+                icon:
+                    "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
+            },
+            {
+                id: 2,
+                name: "Sofya",
+                icon:
+                    "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
+            },
+            {
+                id: 3,
+                name: "Pasha",
+                icon:
+                    "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
+            },
+            {
+                id: 4,
+                name: "Oleg",
+                icon:
+                    "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
+            },
+            {
+                id: 5,
+                name: "Olya",
+                icon:
+                    "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
+            },
+            {
+                id: 6,
+                name: "Andrey",
+                icon:
+                    "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
+            },
         ],
         messagesData: [
             { id: 1, message: "Hello" },
@@ -45,7 +74,6 @@ let state = {
             { id: 3, name: "Sofya" },
         ],
     },
-
 };
 
 export default state;

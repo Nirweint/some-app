@@ -9,7 +9,7 @@ const Dialogs = (props) => {
     ));
 
     let dialogsElements = props.dialogsData.map((dialog) => (
-        <DialogItem name={dialog.name} id={dialog.id} />
+        <DialogItem name={dialog.name} icon={dialog.icon} id={dialog.id} />
     ));
 
     return (

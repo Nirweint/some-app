@@ -5,7 +5,10 @@ import "./DialogItem.css";
 const DialogItem = (props) => {
     return (
         <div className="dialog">
-            <NavLink to={"/dialogs/" + props.id}>{props.name}</NavLink>
+            <NavLink to={"/dialogs/" + props.id}>
+                <img src={props.icon} alt="" />
+                {props.name}
+            </NavLink>
         </div>
     );
 };

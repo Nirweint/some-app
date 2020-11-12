@@ -1,9 +1,18 @@
 .dialog {
     padding: 5px;
     font-size: 19px;
+    display: flex;
+    justify-content: center;
 }
 
 .dialog a {
+    display: flex;
+    justify-content: center;
     color: black;
     text-decoration: none;
+}
+
+.dialog img {
+    width: 45px;
+    height: 45px;
 }
