@@ -45,9 +45,24 @@ let state = {
             },
         ],
         messagesData: [
-            { id: 1, message: "Hello" },
-            { id: 2, message: "hello. How are you?" },
-            { id: 3, message: "too much shit happening" },
+            {
+                icon:
+                    "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
+                id: 1,
+                message: "Hello",
+            },
+            {
+                icon:
+                    "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
+                id: 2,
+                message: "hello. How are you?",
+            },
+            {
+                icon:
+                    "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
+                id: 3,
+                message: "too much shit happening",
+            },
         ],
     },
     navFriends: {

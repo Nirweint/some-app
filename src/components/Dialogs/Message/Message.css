@@ -1,11 +1,22 @@
 .message {
-    width: fit-content;
-    padding: 10px;
-    border-radius: 10px;
+    display: flex;
+    align-items: center;
     margin-left: 5px;
 }
 
-.message:hover {
+.message__message {
+    padding: 10px;
+}
+
+.message__message:hover {
     transition: 0.5s ease-in-out;
     background-color: #c4c4c4;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.message__icon img {
+    width: 40px;
+    height: 40px;
+    margin-right: 4px;
 }
