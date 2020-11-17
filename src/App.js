@@ -23,7 +23,9 @@ function App(props) {
                     render={() => (
                         <Dialogs
                             dialogsData={props.state.dialogsState.dialogsData}
+                            dispatch={props.dispatch}
                             messagesData={props.state.dialogsState.messagesData}
+                            newMessageBody={props.state.dialogsState.newMessageBody}
                         />
                     )}
                 />

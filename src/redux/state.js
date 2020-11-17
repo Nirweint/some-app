@@ -1,5 +1,7 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
+const ADD_MESSAGE = "ADD-MESSAGE";
 
 let store = {
     _state: {
@@ -69,6 +71,7 @@ let store = {
                     message: "too much shit happening",
                 },
             ],
+            newMessageBody: "Enter message",
         },
         navFriends: {
             friendsIcons: [
@@ -78,12 +81,12 @@ let store = {
                         "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
                 },
                 {
-                    id: "1",
+                    id: "2",
                     icon:
                         "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
                 },
                 {
-                    id: "1",
+                    id: "3",
                     icon:
                         "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
                 },
@@ -117,6 +120,19 @@ let store = {
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profileState.newPostText = action.newText;
             this._callSubscriber(this._state);
+        } else if (action.type === ADD_MESSAGE) {
+            let newMessage = {
+                icon:
+                    "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
+                id: 3,
+                message: this._state.dialogsState.newMessageBody,
+            };
+            this._state.dialogsState.messagesData.push(newMessage);
+            this._state.dialogsState.newMessageBody = "";
+            this._callSubscriber(this._state);
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsState.newMessageBody = action.newMessageText;
+            this._callSubscriber(this._state);
         }
     },
 };
@@ -131,6 +147,19 @@ export const updateNewPostTextActionCreator = (text) => {
     return {
         type: UPDATE_NEW_POST_TEXT,
         newText: text,
+    };
+};
+
+export const addMessageActionCreator = () => {
+    return {
+        type: ADD_MESSAGE,
+    };
+};
+
+export const updateNewMessageBodyActionCreator = (message) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_BODY,
+        newMessageText: message,
     };
 };
 
