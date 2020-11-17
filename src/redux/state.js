@@ -98,22 +98,23 @@ let store = {
     _callSubscriber() {
         console.log("Sataetf");
     },
-    addPost() {
-        let newPost = {
-            id: 5,
-            message: this._state.profileState.newPostText,
-            likeCount: 0,
-        };
-        this._state.profileState.postData.push(newPost);
-        this._state.profileState.newPostText = "";
-        this._callSubscriber(this._state);
-    },
-    updateNewPostText(newText) {
-        this._state.profileState.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
     subscribe(observer) {
         this._callSubscriber = observer;
+    },
+    dispatch(action) {
+        if (action.type === "ADD-POST") {
+            let newPost = {
+                id: 5,
+                message: this._state.profileState.newPostText,
+                likeCount: 0,
+            };
+            this._state.profileState.postData.push(newPost);
+            this._state.profileState.newPostText = "";
+            this._callSubscriber(this._state);
+        } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+            this._state.profileState.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
     },
 };
 
