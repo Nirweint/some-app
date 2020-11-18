@@ -1,3 +1,7 @@
+import dialogsStateReducer from "./dialogs-state-reducer";
+import navFriendsReducer from "./nav-friends-reducer";
+import profileStateReducer from "./profile-state-reducer";
+
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
@@ -108,32 +112,12 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            let newPost = {
-                id: 5,
-                message: this._state.profileState.newPostText,
-                likeCount: 0,
-            };
-            this._state.profileState.postData.push(newPost);
-            this._state.profileState.newPostText = "";
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profileState.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === ADD_MESSAGE) {
-            let newMessage = {
-                icon:
-                    "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
-                id: 3,
-                message: this._state.dialogsState.newMessageBody,
-            };
-            this._state.dialogsState.messagesData.push(newMessage);
-            this._state.dialogsState.newMessageBody = "";
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.dialogsState.newMessageBody = action.newMessageText;
-            this._callSubscriber(this._state);
-        }
+
+        this._state.profileState = profileStateReducer(this._state.profileState, action);
+        this._state.dialogsState = dialogsStateReducer(this._state.dialogsState, action);
+        this._state.navFriends = navFriendsReducer(this._state.navFriends, action);
+        
+        this._callSubscriber(this._state);
     },
 };
 
