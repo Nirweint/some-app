@@ -60,7 +60,7 @@ let initialState = {
             message: "too much shit happening",
         },
     ],
-    newMessageBody: "Enter message",
+    newMessageBody: "",
 };
 
 const dialogsStateReducer = (state = initialState, action) => {

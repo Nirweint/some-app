@@ -1,7 +1,10 @@
 import React from "react";
 import Post from "./Post/Post";
 import "./MyPosts.css";
-import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../redux/profile-state-reducer";
+import {
+    addPostActionCreator,
+    updateNewPostTextActionCreator,
+} from "../../../redux/profile-state-reducer";
 
 const MyPosts = (props) => {
     let postElements = props.postData.map((post) => (
@@ -28,6 +31,7 @@ const MyPosts = (props) => {
                         onChange={onPostChange}
                         ref={newPostElement}
                         value={props.newPostText}
+                        placeholder="Enter message"
                     />
                 </div>
                 <div>
