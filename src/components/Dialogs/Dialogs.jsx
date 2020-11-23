@@ -8,11 +8,11 @@ import "./Dialogs.css";
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
-    let messagesElements = props.messagesData.map((message) => (
+    let messagesElements = props.state.dialogsState.messagesData.map((message) => (
         <Message icon={message.icon} message={message.message} />
     ));
 
-    let dialogsElements = props.dialogsData.map((dialog) => (
+    let dialogsElements = props.state.dialogsState.dialogsData.map((dialog) => (
         <DialogItem name={dialog.name} icon={dialog.icon} id={dialog.id} />
     ));
 
@@ -39,7 +39,7 @@ const Dialogs = (props) => {
                     <textarea
                         onChange={onMessageChange}
                         ref={newMessageElement}
-                        value={props.newMessageBody}
+                        value={props.state.dialogsState.newMessageBody}
                         placeholder="Enter message"
                     ></textarea>
                     <button onClick={addMessage}>Send message</button>

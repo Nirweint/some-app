@@ -22,10 +22,8 @@ function App(props) {
                     path="/dialogs"
                     render={() => (
                         <Dialogs
-                            dialogsData={props.state.dialogsState.dialogsData}
+                            state={props.state}
                             dispatch={props.dispatch}
-                            messagesData={props.state.dialogsState.messagesData}
-                            newMessageBody={props.state.dialogsState.newMessageBody}
                         />
                     )}
                 />
@@ -33,9 +31,8 @@ function App(props) {
                     path="/profile"
                     render={() => (
                         <Profile
-                            postData={props.state.profileState.postData}
+                            state={props.state}
                             dispatch={props.dispatch}
-                            newPostText={props.state.profileState.newPostText}
                         />
                     )}
                 />

@@ -7,7 +7,7 @@ import {
 } from "../../../redux/profile-state-reducer";
 
 const MyPosts = (props) => {
-    let postElements = props.postData.map((post) => (
+    let postElements = props.state.profileState.postData.map((post) => (
         <Post message={post.message} likeCount={post.likeCount} />
     ));
 
@@ -30,7 +30,7 @@ const MyPosts = (props) => {
                     <textarea
                         onChange={onPostChange}
                         ref={newPostElement}
-                        value={props.newPostText}
+                        value={props.state.profileState.newPostText}
                         placeholder="Enter message"
                     />
                 </div>
