@@ -8,23 +8,25 @@ import "./Dialogs.css";
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
-    let messagesElements = props.state.dialogsState.messagesData.map((message) => (
-        <Message icon={message.icon} message={message.message} />
+    let state = props.store.getState().dialogsState;
+
+    let dialogsElements = state.dialogsData.map((dialog) => (
+        <DialogItem name={dialog.name} icon={dialog.icon} id={dialog.id} />
     ));
 
-    let dialogsElements = props.state.dialogsState.dialogsData.map((dialog) => (
-        <DialogItem name={dialog.name} icon={dialog.icon} id={dialog.id} />
+    let messagesElements = state.messagesData.map((message) => (
+        <Message icon={message.icon} message={message.message} />
     ));
 
     let newMessageElement = React.createRef();
 
     let addMessage = () => {
-        props.dispatch(addMessageActionCreator());
+        props.store.dispatch(addMessageActionCreator());
     };
 
     let onMessageChange = () => {
         let message = newMessageElement.current.value;
-        props.dispatch(updateNewMessageBodyActionCreator(message));
+        props.store.dispatch(updateNewMessageBodyActionCreator(message));
     };
 
     return (
@@ -39,7 +41,7 @@ const Dialogs = (props) => {
                     <textarea
                         onChange={onMessageChange}
                         ref={newMessageElement}
-                        value={props.state.dialogsState.newMessageBody}
+                        value={state.newMessageBody}
                         placeholder="Enter message"
                     ></textarea>
                     <button onClick={addMessage}>Send message</button>
