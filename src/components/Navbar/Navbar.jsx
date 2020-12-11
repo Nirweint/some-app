@@ -3,11 +3,15 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = (props) => {
-    let friendsIcon = props.friendsData.map((icon) => (
+    let state = props.store.getState();
+
+    let friendsIcon = state.navFriends.friendsIcons.map((icon) => (
         <img src={(icon = icon.icon)} alt="icon" />
     ));
 
-    let friendsNam = props.friendsNam.map((name) => <div>{name.name}</div>);
+    let friendsNam = state.navFriends.friendsNames.map((name) => (
+        <div>{name.name}</div>
+    ));
 
     return (
         <nav className="nav">

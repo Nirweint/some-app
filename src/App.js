@@ -13,10 +13,7 @@ function App(props) {
     return (
         <div className="app-wrapper">
             <Header />
-            <Navbar
-                friendsData={props.state.navFriends.friendsIcons}
-                friendsNam={props.state.navFriends.friendsNames}
-            />
+            <Navbar store={props.store} />
             <div className="app-wrapper-content">
                 <Route
                     path="/dialogs"
@@ -24,11 +21,7 @@ function App(props) {
                 />
                 <Route
                     path="/profile"
-                    render={() => (
-                        <Profile
-                            store={props.store}
-                        />
-                    )}
+                    render={() => <Profile store={props.store} />}
                 />
                 <Route path="/news" component={News} />
                 <Route path="/music" component={Music} />
