@@ -65,19 +65,24 @@ let initialState = {
 
 const dialogsStateReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MESSAGE:
+        case ADD_MESSAGE: {
             let newMessage = {
                 icon:
                     "https://icons-for-free.com/iconfiles/png/512/business+face+people+icon-1320086457520622872.png",
                 id: 3,
                 message: state.newMessageBody,
             };
-            state.messagesData.push(newMessage);
-            state.newMessageBody = "";
-            return state;
-        case UPDATE_NEW_MESSAGE_BODY:
-            state.newMessageBody = action.newMessageText;
-            return state;
+            let stateCopy = { ...state };
+            stateCopy.messagesData = [...state.messagesData];
+            stateCopy.messagesData.push(newMessage);
+            stateCopy.newMessageBody = "";
+            return stateCopy;
+        }
+        case UPDATE_NEW_MESSAGE_BODY: {
+            let stateCopy = { ...state };
+            stateCopy.newMessageBody = action.newMessageText;
+            return stateCopy;
+        }
         default:
             return state;
     }
