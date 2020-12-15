@@ -25,6 +25,9 @@ const Navbar = (props) => {
                 <NavLink to="/news">News</NavLink>
             </div>
             <div className="nav__link">
+                <NavLink to="/users">Users</NavLink>
+            </div>
+            <div className="nav__link">
                 <NavLink to="/music">Music</NavLink>
             </div>
             <div className="nav__link">
