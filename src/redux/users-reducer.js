@@ -5,35 +5,42 @@ const SET_USERS = "SET-USERS";
 let initialState = {
     users: [
         {
+            photoUrl:
+                "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
             id: 1,
             followed: false,
             fullName: "Alex",
             status: "I am dead",
-            loacation: { city: "Pinsk", country: "Belarus" },
+            location: { city: "Pinsk", country: "Belarus" },
         },
         {
+            photoUrl:
+                "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
             id: 2,
             followed: true,
             fullName: "Sofya",
             status: "I am dead too",
-            loacation: { city: "Pinsk", country: "Belarus" },
+            location: { city: "Pinsk", country: "Belarus" },
         },
         {
+            photoUrl:
+                "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
             id: 3,
             followed: false,
             fullName: "Pasha",
             status: "I drunk",
-            loacation: { city: "Minsk", country: "Belarus" },
+            location: { city: "Minsk", country: "Belarus" },
         },
         {
+            photoUrl:
+                "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
             id: 4,
             followed: true,
             fullName: "Dmitry",
             status: "away",
-            loacation: { city: "Moscow", country: "Russia" },
+            location: { city: "Moscow", country: "Russia" },
         },
     ],
-    newPostText: "",
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -42,26 +49,22 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 // users: [...state.users] same us users: [state.users.map(u => u)]
-                users: [
-                    state.users.map((u) => {
-                        if (u.id === action.userId) {
-                            return { ...u, followed: true };
-                        }
-                        return u;
-                    }),
-                ],
+                users: state.users.map((u) => {
+                    if (u.id === action.userId) {
+                        return { ...u, followed: true };
+                    }
+                    return u;
+                }),
             };
         case UNFOLLOW:
             return {
                 ...state,
-                users: [
-                    state.users.map((u) => {
-                        if (u.id === action.userId) {
-                            return { ...u, followed: false };
-                        }
-                        return u;
-                    }),
-                ],
+                users: state.users.map((u) => {
+                    if (u.id === action.userId) {
+                        return { ...u, followed: false };
+                    }
+                    return u;
+                }),
             };
         case SET_USERS: {
             return { ...state, users: [...state.users, ...action.users] };
