@@ -4,42 +4,42 @@ const SET_USERS = "SET-USERS";
 
 let initialState = {
     users: [
-        {
-            photoUrl:
-                "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-            id: 1,
-            followed: false,
-            fullName: "Alex",
-            status: "I am dead",
-            location: { city: "Pinsk", country: "Belarus" },
-        },
-        {
-            photoUrl:
-                "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-            id: 2,
-            followed: true,
-            fullName: "Sofya",
-            status: "I am dead too",
-            location: { city: "Pinsk", country: "Belarus" },
-        },
-        {
-            photoUrl:
-                "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-            id: 3,
-            followed: false,
-            fullName: "Pasha",
-            status: "I drunk",
-            location: { city: "Minsk", country: "Belarus" },
-        },
-        {
-            photoUrl:
-                "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-            id: 4,
-            followed: true,
-            fullName: "Dmitry",
-            status: "away",
-            location: { city: "Moscow", country: "Russia" },
-        },
+    //     {
+    //         photoUrl:
+    //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
+    //         id: 1,
+    //         followed: false,
+    //         fullName: "Alex",
+    //         status: "I am dead",
+    //         location: { city: "Pinsk", country: "Belarus" },
+    //     },
+    //     {
+    //         photoUrl:
+    //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
+    //         id: 2,
+    //         followed: true,
+    //         fullName: "Sofya",
+    //         status: "I am dead too",
+    //         location: { city: "Pinsk", country: "Belarus" },
+    //     },
+    //     {
+    //         photoUrl:
+    //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
+    //         id: 3,
+    //         followed: false,
+    //         fullName: "Pasha",
+    //         status: "I drunk",
+    //         location: { city: "Minsk", country: "Belarus" },
+    //     },
+    //     {
+    //         photoUrl:
+    //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
+    //         id: 4,
+    //         followed: true,
+    //         fullName: "Dmitry",
+    //         status: "away",
+    //         location: { city: "Moscow", country: "Russia" },
+    //     },
     ],
 };
 
