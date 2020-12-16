@@ -3,15 +3,19 @@ import React from "react";
 import "./Users.css";
 
 const Users = (props) => {
-    if (props.users.length === 0) {
-        Axios.get("https://social-network.samuraijs.com/api/1.0/users").then(
-            (response) => {
+    let getUsers = () => {
+        if (props.users.length === 0) {
+            Axios.get(
+                "https://social-network.samuraijs.com/api/1.0/users"
+            ).then((response) => {
                 props.setUsers(response.data.items);
-            }
-        );
-    }
+            });
+        }
+    };
+
     return (
         <div>
+            <button onClick={getUsers}>Get Users</button>
             {props.users.map((u) => (
                 <div key={u.id}>
                     <span>
