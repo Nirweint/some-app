@@ -1,46 +1,51 @@
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET-USERS";
+const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
+const SET_TOTAL_USERS_COUNT = "SET-TOTAL-USERS-COUNT";
 
 let initialState = {
     users: [
-    //     {
-    //         photoUrl:
-    //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-    //         id: 1,
-    //         followed: false,
-    //         fullName: "Alex",
-    //         status: "I am dead",
-    //         location: { city: "Pinsk", country: "Belarus" },
-    //     },
-    //     {
-    //         photoUrl:
-    //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-    //         id: 2,
-    //         followed: true,
-    //         fullName: "Sofya",
-    //         status: "I am dead too",
-    //         location: { city: "Pinsk", country: "Belarus" },
-    //     },
-    //     {
-    //         photoUrl:
-    //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-    //         id: 3,
-    //         followed: false,
-    //         fullName: "Pasha",
-    //         status: "I drunk",
-    //         location: { city: "Minsk", country: "Belarus" },
-    //     },
-    //     {
-    //         photoUrl:
-    //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-    //         id: 4,
-    //         followed: true,
-    //         fullName: "Dmitry",
-    //         status: "away",
-    //         location: { city: "Moscow", country: "Russia" },
-    //     },
+        //     {
+        //         photoUrl:
+        //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
+        //         id: 1,
+        //         followed: false,
+        //         fullName: "Alex",
+        //         status: "I am dead",
+        //         location: { city: "Pinsk", country: "Belarus" },
+        //     },
+        //     {
+        //         photoUrl:
+        //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
+        //         id: 2,
+        //         followed: true,
+        //         fullName: "Sofya",
+        //         status: "I am dead too",
+        //         location: { city: "Pinsk", country: "Belarus" },
+        //     },
+        //     {
+        //         photoUrl:
+        //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
+        //         id: 3,
+        //         followed: false,
+        //         fullName: "Pasha",
+        //         status: "I drunk",
+        //         location: { city: "Minsk", country: "Belarus" },
+        //     },
+        //     {
+        //         photoUrl:
+        //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
+        //         id: 4,
+        //         followed: true,
+        //         fullName: "Dmitry",
+        //         status: "away",
+        //         location: { city: "Moscow", country: "Russia" },
+        //     },
     ],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 1,
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -67,7 +72,13 @@ const usersReducer = (state = initialState, action) => {
                 }),
             };
         case SET_USERS: {
-            return { ...state, users: [...state.users, ...action.users] };
+            return { ...state, users: action.users };
+        }
+        case SET_CURRENT_PAGE: {
+            return { ...state, currentPage: action.currentPage };
+        }
+        case SET_TOTAL_USERS_COUNT: {
+            return { ...state, totalUsersCount: action.count };
         }
 
         default:
@@ -95,4 +106,19 @@ export const setUsersAC = (users) => {
         users,
     };
 };
+
+export const setCurrentPageAC = (currentPage) => {
+    return {
+        type: SET_CURRENT_PAGE,
+        currentPage,
+    };
+};
+
+export const setTotalUsersCountAC = (totalUsersCount) => {
+    return {
+        type: SET_TOTAL_USERS_COUNT,
+        count: totalUsersCount,
+    };
+};
+
 export default usersReducer;
