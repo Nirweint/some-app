@@ -19,9 +19,7 @@
     color: #7c63ca;
 }
 
-
-
-.messages__add {
+.messages__add { 
     display: flex;
 }
 
