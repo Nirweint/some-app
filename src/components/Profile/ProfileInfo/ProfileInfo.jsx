@@ -1,11 +1,16 @@
 import React from "react";
+import Loader from "../../common/loader/loader";
 import "./ProfileInfo.css";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    if (!props.profile) {
+        return <Loader/>
+    }
+ 
     return (
         <div className="profile-info">
             <img className="profile-info__img"
-                src="https://www.ippanetwork.org/wp-content/uploads/2016/03/MC-2016-Background-e1458413633484.jpg"
+                src={props.profile.photos.large}
                 alt="img"
             />
             <div className="descriptionBlock">ava + descr</div>

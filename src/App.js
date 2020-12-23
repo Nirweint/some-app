@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Profile from "./components/Profile/Profile";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
@@ -9,6 +8,7 @@ import Settings from "./components/Settings/Settings";
 import { Route } from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 function App(props) {
     return (
@@ -22,7 +22,7 @@ function App(props) {
                 />
                 <Route
                     path="/profile"
-                    render={() => <Profile store={props.store} />}
+                    render={() => <ProfileContainer store={props.store} />}
                 />
                 <Route
                     path="/users"
