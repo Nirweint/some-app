@@ -3,49 +3,14 @@ const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET-USERS";
 const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
 const SET_TOTAL_USERS_COUNT = "SET-TOTAL-USERS-COUNT";
+const TOGGLE_IS_FETCHING = "TOGGLE-IS-FETCHING";
 
 let initialState = {
-    users: [
-        //     {
-        //         photoUrl:
-        //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-        //         id: 1,
-        //         followed: false,
-        //         fullName: "Alex",
-        //         status: "I am dead",
-        //         location: { city: "Pinsk", country: "Belarus" },
-        //     },
-        //     {
-        //         photoUrl:
-        //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-        //         id: 2,
-        //         followed: true,
-        //         fullName: "Sofya",
-        //         status: "I am dead too",
-        //         location: { city: "Pinsk", country: "Belarus" },
-        //     },
-        //     {
-        //         photoUrl:
-        //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-        //         id: 3,
-        //         followed: false,
-        //         fullName: "Pasha",
-        //         status: "I drunk",
-        //         location: { city: "Minsk", country: "Belarus" },
-        //     },
-        //     {
-        //         photoUrl:
-        //             "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-        //         id: 4,
-        //         followed: true,
-        //         fullName: "Dmitry",
-        //         status: "away",
-        //         location: { city: "Moscow", country: "Russia" },
-        //     },
-    ],
+    users: [],
     pageSize: 5,
     totalUsersCount: 0,
     currentPage: 1,
+    isFetching: false,
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -79,6 +44,9 @@ const usersReducer = (state = initialState, action) => {
         }
         case SET_TOTAL_USERS_COUNT: {
             return { ...state, totalUsersCount: action.count };
+        }
+        case TOGGLE_IS_FETCHING: {
+            return { ...state, isFetching: action.isFetching };
         }
 
         default:
@@ -118,6 +86,12 @@ export const setTotalUsersCountAC = (totalUsersCount) => {
     return {
         type: SET_TOTAL_USERS_COUNT,
         count: totalUsersCount,
+    };
+};
+export const toggleIsFetchingAC = (isFetching) => {
+    return {
+        type: TOGGLE_IS_FETCHING,
+        isFetching,
     };
 };
 
