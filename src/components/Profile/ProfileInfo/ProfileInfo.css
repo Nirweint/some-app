@@ -1,13 +1,15 @@
 .profile-info {
+    display: block;
     margin: 0 auto;
     padding: 0;
 }
 
-.descriptionBlock {
-    padding: 10px;
+.profile-about-me {
+    padding: 0 0 10px 0;
 } 
 
-.profile__img {
-    align-content: center;
-
+.profile-info__img {
+    margin: 10px 10px;
+    width: 250px;
+    height: auto;
 }
