@@ -1,10 +1,11 @@
 .profile-info {
+    display: block;
     margin: 0 auto;
     padding: 10px;
 }
 
-
-.profile__img {
-    align-content: center;
-
+.profile-info__img {
+    margin: 10px 10px;
+    width: 250px;
+    height: auto;
 }
