@@ -7,3 +7,14 @@
 .header img {
     width: 60px;
 }
+
+.login-block {
+    margin-right: 1rem;
+    margin-top: 1rem;
+    float: right;
+}
+
+.login-block-text {
+    color: black;
+    text-decoration: none;
+}
