@@ -26,6 +26,10 @@ export const usersAPI = {
             `https://social-network.samuraijs.com/api/1.0/follow/${userId}`
         );
     },
+    getProfile(userId) {
+        return Axios.get(
+            `https://social-network.samuraijs.com/api/1.0/profile/` + userId);
+    }
 };
 
 // export const getUsers2 = (currentPage = 1, pageSize = 5) => {
