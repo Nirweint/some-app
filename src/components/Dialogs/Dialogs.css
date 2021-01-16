@@ -1,7 +1,8 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 8fr;
-    
+    position: relative;
+    height: 90vh;
 }
 
 .dialogs__head {
@@ -19,7 +20,10 @@
     color: #7c63ca;
 }
 
+
 .messages__add { 
     display: flex;
+    
+    
 }
 

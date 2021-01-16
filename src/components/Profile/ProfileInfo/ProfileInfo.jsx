@@ -3,6 +3,7 @@ import Loader from "../../common/loader/loader";
 import "./ProfileInfo.css";
 
 const ProfileInfo = (props) => {
+
     if (!props.profile) {
         return <Loader />;
     }
@@ -16,6 +17,7 @@ const ProfileInfo = (props) => {
             />
             <div className="profile-full-name">FullName: {props.profile.fullName}</div>
             <div className="profile-about-me">Description: {props.profile.aboutMe}</div>
+            <div className="profile-contacts">JobDescription: {props.profile.lookingForAJobDescription}</div>
         </div>
     );
 };
