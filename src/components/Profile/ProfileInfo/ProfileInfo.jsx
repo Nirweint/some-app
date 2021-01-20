@@ -4,7 +4,6 @@ import "./ProfileInfo.css";
 import ProfileStatus from "./ProfileStatus";
 
 const ProfileInfo = (props) => {
-
     if (!props.profile) {
         return <Loader />;
     }
@@ -16,10 +15,19 @@ const ProfileInfo = (props) => {
                 src={props.profile.photos.large}
                 alt="img"
             />
-            <ProfileStatus status="Hello"/>
-            <div className="profile-full-name">FullName: {props.profile.fullName}</div>
-            <div className="profile-about-me">Description: {props.profile.aboutMe}</div>
-            <div className="profile-contacts">JobDescription: {props.profile.lookingForAJobDescription}</div>
+            <ProfileStatus
+                status={props.status}
+                updateStatus={props.updateStatus}
+            />
+            <div className="profile-full-name">
+                FullName: {props.profile.fullName}
+            </div>
+            <div className="profile-about-me">
+                Description: {props.profile.aboutMe}
+            </div>
+            <div className="profile-contacts">
+                JobDescription: {props.profile.lookingForAJobDescription}
+            </div>
         </div>
     );
 };
